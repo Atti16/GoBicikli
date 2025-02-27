@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" /> 
+    <title>Go-Bicikli Shop - Kezdőlap</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/gb-logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/countdown.js"></script>
+    <script src="src/apiCalls.js"></script>
+    <script src="src/isUserLoggedIn.js"></script>
+</head>
+<body onload="displayDateAndTime();changeLoginText()">
+    <!--================ Kezdőlap Menü Terület =================-->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top topnav">
+            <a class="navbar-brand" href="home.html">Go-Bicikli</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link color-white" href="home.html">Kezdőlap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="category.html">Kategóriák</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Bolt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Kapcsolat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="insert-new-item.html">Új termék</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="shopping-cart.html"><img style="height: 30px;" src="assets/icons/shopping-cart-white.png"></a></li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--================ Vége a Kezdőlap Menü Területnek =================-->
+    <!--================ Kezdőlap Kép és Vásárlás Most Terület =================-->
+    <div id="indexWraper">
+    <div>
+        <div class="container-fluid home-photo">  
+            <div class="home-shop-now-btn">
+                <div class="vertical-center">
+                    <h2 style="color: black">Üdvözöljük a Go-Bicikli Webáruházban</h2>
+                    <a class="btn btn-secondary" href="shop.html">Vásárolj Most</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--================ Vége a Kezdőlap Kép és Vásárlás Most Területnek =================-->
+    <!--================ Kezdőlap Üdvözlő Terület =================-->
+    <div class="text-center pt-1">
+        <h2><small>Csak prémium minőségű bicikliket árulunk</small></h2>
+        <p>Kezd a keresést a kategóriákban:</p>
+    </div>
+    <!--================ Vége a Kezdőlap Üdvözlő Területnek =================-->
+    <!--================ Kezdőlap Kategóriák Terület =================-->
+    <div class="container-fluid">
+        <div class="row justify-content-md-center" style="width: 95%; margin: auto;">
+            <div class="col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+                <a class="cat-home" href="mountain.html">
+                    <div class="card mx-auto text-center">
+                    <img src="images/Marin Bolinas Ridge 1 Photo.jpg" alt="Hegyi" class="card-img-top">
+                        <div class="card-body pb-0">
+                            <h4 class="card-title">Hegyi</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+                <a class="cat-home" href="gravel.html">
+                    <div class="card mx-auto text-center">
+                    <img src="images/Marin Gestalt Photo.jpg" alt="Gravel" class="card-img-top">
+                        <div class="card-body pb-0">
+                            <h4 class="card-title">Terep</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+                <a class="cat-home" href="road.html">
+                    <div class="card mx-auto text-center">
+                    <img src="images/Polygon Strattos S5 - Shimano 105 Photo.jpg" alt="Út" class="card-img-top">
+                        <div class="card-body pb-0">
+                            <h4 class="card-title">Út</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+                <a class="cat-home" href="city.html">
+                    <div class="card mx-auto text-center">
+                    <img src="images/Marin Kentfield CS2 ST Photo.jpg" alt="Városi" class="card-img-top">
+                        <div class="card-body pb-0">
+                            <h4 class="card-title">Városi</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+                <a class="cat-home" href="electric.html">
+                    <div class="card mx-auto text-center pb-0">
+                    <img src="images/Polygon Mt Bromo N7 Photo.jpg" alt="Elektromos" class="card-img-top">
+                        <div class="card-body">
+                            <h4 class="card-title">Elektromos</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--================ Vége a Kezdőlap Kategóriák Területnek =================-->  
+    </br>
+    <!--================ Kezdőlap Üzenet Terület =================-->
+    <div class="text-center pt-1">
+        <h2><small>Minden megvásárolt biciklinkre 5 év garancia jár!</small></h2>
+        <a class="btn btn-secondary" href="shop.html">Vásárolj Most</a>
+    </div>
+    <!--================ Vége a Kezdőlap Üzenet Területnek =================-->
+    </br>
+    <!--================ Kezdőlap Hírlevél Terület =================-->
+    <hr>
+    <div class="justify-content-md-center pt-1">
+        <form class="" action="">
+            <div class="container justify-content-md-center">
+                <div class="row mb-3 text-center">
+                    <h4 class="col-12">Csatlakozz hírlevelünkhöz a legfrissebb hírekért és ajánlatokért</h4>
+                    <div class="col-4 pr-1">
+                    <input type="text" class="form-control" placeholder="Név" name="name" required>
+                    </div>
+                    <div class="col-4 pr-1">
+                    <input type="text" class="form-control" placeholder="Email cím" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    </div>
+                    <div class="col-4 pr-1">
+                        <button type="submit" class="btn btn-primary btn-block" onclick="alert('Feliratkozás')">Feliratkozás</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+    <!--================ Vége a Kezdőlap Hírlevél Területnek =================-->
+    <!--================ Kezdőlap Lábjegyzet Terület =================-->
+    <footer class="page-footer font-small">
+        <span id="dateAndTime"></span>
+        <div class="footer-copyright text-center py-3">© 2025 Szerzői jogok
+        </div>
+    </footer>
+    <!--================ Vége a Kezdőlap Lábjegyzet Területnek =================-->
+</body>
+</html>

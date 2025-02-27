@@ -1,55 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Go-Bike Shop - Insert Item</title>
-    <link rel="icon" type="image/x-icon" href="../assets/images/gb-logo.png">
-    <link rel="stylesheet" href="../css/style.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" /> 
+    <title>Go-Bicikli Bolt - Termék hozzáadása</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/gb-logo.png">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/src/index.js"></script>
-    <script src="/src/readSingleItem.js"></script>
-    <script src="/src/isUserLoggedIn.js"></script>
+    <script src="src/index.js"></script>
+    <script src="src/readSingleItem.js"></script>
+    <script src="src/isUserLoggedIn.js"></script>
 </head>
 <body onload="loadItemToShow();changeLoginText()" style="background-color: white;">
-    <!--================ Start Header Menu Area =================-->
+    <!--================ Fejléc Menü Kezdete =================-->
     <header>
         <nav class="navbar navbar-expand-md navbar-light fixed-top topnav">
-            <a class="navbar-brand" href="index.html">Go-Bike</a>
+            <a class="navbar-brand" href="home.html">Go-Bicikli</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link color-white" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link color-white" href="home.html">Kezdőlap <span class="sr-only">(jelenlegi)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../category.html">Categories</a>
+                        <a class="nav-link" href="category.html">Kategóriák</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../shop.html">Shop</a></li>
+                        <a class="nav-link" href="shop.html">Bolt</a></li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../contact.html">Contact</a></li>
+                        <a class="nav-link" href="contact.html">Kapcsolat</a></li>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="../auth/login.html" id="loginB">Login</a></li>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../shopping-cart.html"><img style="height: 30px;" src="/assets/icons/shopping-cart-white.png"></a></li>
+                        <a class="nav-link" href="shopping-cart.html"><img style="height: 30px;" src="assets/icons/shopping-cart-white.png"></a></li>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-    <!--================ End Header Menu Area =================-->
+    <!--================ Fejléc Menü Vége =================-->
     <div class="container pt-4">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-3" id="item">
@@ -59,60 +56,63 @@
                 </br>
                 <h2 id="dynamicItemName"></h2>
                 <p id="dynamicItemDescription"></p>
-                <p>Size:
+                <p>Méret:
                 <span><select name="size" id="itemSize">
-                    <option value="XS">XS (height 4'8" - 5'2") - 27.5" Wheel</option>
-                    <option value="S">S (height 5'1" - 5'5") - 27.5" Wheel</option>
-                    <option value="M">M (height 5'4" - 5'7") - 27.5" Wheel</option>
-                    <option value="M">M (height 5'5" - 5'8") - 29" Wheel</option>
-                    <option value="L">L (height 5'8" - 6'1") - 29" Wheel</option>
-                    <option value="XL">XL (height 6'1" - 6'4") - 29" Wheel</option>
+                    <option value="XS">XS (magasság 142-158 cm) - 27,5" Kerék</option>
+                    <option value="S">S (magasság 155-165 cm) - 27,5" Kerék</option>
+                    <option value="M">M (magasság 163-170 cm) - 27,5" Kerék</option>
+                    <option value="M">M (magasság 165-173 cm) - 29" Kerék</option>
+                    <option value="L">L (magasság 173-185 cm) - 29" Kerék</option>
+                    <option value="XL">XL (magasság 185-193 cm) - 29" Kerék</option>
                 </select></span></p>
-                <p>Color:
+                <p>Szín:
                     <span><select name="color" id="itemColor">
-                        <option value="Blue">Blue</option>
-                        <option value="Grey">Grey</option>
-                        <option value="Yellow">Yellow</option>
-                        <option value="Black">Black</option>
+                        <option value="Blue">Kék</option>
+                        <option value="Grey">Szürke</option>
+                        <option value="Yellow">Sárga</option>
+                        <option value="Black">Fekete</option>
+                        <option value="Black">Zöld</option>
+                        <option value="Black">Fehér</option>
                     </select></span></p>
-                <p>Quantity: 
+                <p>Mennyiség: 
                     <span><input type="number" id="qty" name="qty" min="1" max="5" value="1"></span></p>
-                <p>Rating: <img style="height: 18px;" src="../assets/icons/star.png"><span class="star"> <span id="dynamicItemRate"></span></span></p>       
-                <p>Price: <span style="color: #4CBB17;">$<span id="dynamicItemPrice"></span></span></p>
+                <p>Értékelés: 4 <img style="height: 18px;" src="assets/icons/star.png"><span class="star"> <span id="dynamicItemRate"></span></span></p>       
+                <p>Ár: <span style="color: red;">700$<span id="dynamicItemPrice"></span></span></p>
+                <button onclick="addToCart()">Kosárba</button>
                 <div id="dynamicItemAction"></div>
             </div>
         </div>
         <div>
-            <h3>Recommended items</h3>
+            <h3>Ajánlott termékek</h3>
             <hr>
             <div class="row w-90 mx-auto">
                 <div class="col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4">
                     <div class="card mx-auto text-center">
-                    <img src="../assets/images/Marin Bolinas Ridge 2 Black.jpg" alt="Mountain" class="card-img-top">
+                    <img src="assets/images/Marin Bolinas Ridge 2 Black.jpg" alt="Hegyi" class="card-img-top">
                         <div class="card-body pb-0">
                             <h5>Marin Bolinas Ridge 2</h5>
-                            <h5><img style="height: 18px;" src="/assets/icons/star.png"><span class="star"> 4.5</span></h5>
-                            <a class="btn btn-secondary btn-block" href="/items/single-item.html" onclick="setIdOfItemToShow(2)">Read more</a>
+                            <h5><img style="height: 18px;" src="assets/icons/star.png"><span class="star"> 4.5</span></h5>
+                            <a class="btn btn-secondary btn-block" href="single-item.html" onclick="setIdOfItemToShow(2)">Részletek</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4">
                     <div class="card mx-auto text-center">
-                    <img src="../assets/images/Polygon Strattos S5 - Shimano 105.jpg" alt="Mountain" class="card-img-top">
+                    <img src="assets/images/Polygon Strattos S5 - Shimano 105.jpg" alt="Hegyi" class="card-img-top">
                         <div class="card-body pb-0">
                             <h5>Polygon Strattos S5 - Shimano 105</h5>
-                            <h5><img style="height: 18px;" src="/assets/icons/star.png"><span class="star"> 5</span></h5>
-                            <a class="btn btn-secondary btn-block" href="/items/single-item.html" onclick="setIdOfItemToShow(4)">Read more</a>
+                            <h5><img style="height: 18px;" src="assets/icons/star.png"><span class="star"> 5</span></h5>
+                            <a class="btn btn-secondary btn-block" href="single-item.html" onclick="setIdOfItemToShow(4)">Részletek</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4">
                     <div class="card mx-auto text-center">
-                    <img src="../assets/images/Polygon Mt Bromo N8.jpg" alt="Mountain" class="card-img-top">
+                    <img src="assets/images/Polygon Mt Bromo N8.jpg" alt="Hegyi" class="card-img-top">
                         <div class="card-body pb-0">
                             <h5>Polygon Mt Bromo N8</h5>
-                            <h5><img style="height: 18px;" src="/assets/icons/star.png"><span class="star"> 5</span></h5>
-                            <a class="btn btn-secondary btn-block" href="/items/single-item.html" onclick="setIdOfItemToShow(8)">Read more</a>
+                            <h5><img style="height: 18px;" src="assets/icons/star.png"><span class="star"> 5</span></h5>
+                            <a class="btn btn-secondary btn-block" href="single-item.html" onclick="setIdOfItemToShow(8)">Részletek</a>
                         </div>
                     </div>
                 </div>
@@ -121,32 +121,57 @@
     </div>
     </br>
     </hr>
-    <!--================ Start Newsletter Area =================-->
+    <script>    
+    <!-- Kosár megjelenítése -->
+<div class="container mt-4">
+    <h3>Kosár tartalma</h3>
+    <div id="cartContainer"></div>
+    <button class="btn btn-danger mt-2" onclick="clearCart()">Kosár törlése</button>
+</div>
+    function addToCart() {
+        const item = {
+            name: document.getElementById('dynamicItemName').innerText,
+            price: 700, // Példa ár, ezt dinamikusan is beállíthatod
+            size: document.getElementById('itemSize').value,
+            color: document.getElementById('itemColor').value,
+            quantity: document.getElementById('qty').value
+        };
+    
+        // Kosár tartalmának lekérése a localStorage-ból
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(item); // Új termék hozzáadása a kosárhoz
+        localStorage.setItem('cart', JSON.stringify(cart)); // Kosár frissítése
+    
+        alert('Termék hozzáadva a kosárhoz!');
+    }
+    </script>>
+
+    <!--================ Hírlevél Feliratkozás Kezdete =================-->
     <hr>
     <div class="justify-content-md-center pt-1">
         <form class="" action="">
             <div class="container justify-content-md-center">
                 <div class="row mb-3 text-center">
-                    <h4 class="col-12">Join our newsletter for latest news and offers</h4>
+                    <h4 class="col-12">Iratkozzon fel hírlevelünkre a legújabb hírekért és ajánlatokért</h4>
                     <div class="col-4 pr-1">
-                    <input type="text" class="form-control" placeholder="Name" name="name" required>
+                    <input type="text" class="form-control" placeholder="Név" name="name" required>
                     </div>
                     <div class="col-4 pr-1">
-                    <input type="text" class="form-control" placeholder="Email address" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    <input type="text" class="form-control" placeholder="Email cím" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
                     </div>
                     <div class="col-4 pr-1">
-                        <button type="submit" class="btn btn-primary btn-block" onclick="alert('Still No JS')">Subscribe</button>
+                        <button type="submit" class="btn btn-primary btn-block" onclick="alert('Feliratkozás')">Feliratkozás</button>
                     </div>
                 </div>
             </div>
         </form>
     </div>
-    <!--================ End Newsletter Area =================-->
-    <!--================ Start Footer Area =================-->
+    <!--================ Hírlevél Feliratkozás Vége =================-->
+    <!--================ Lábléc Kezdete =================-->
     <footer class="page-footer font-small">
-        <div class="footer-copyright text-center py-3">© 2025 Copyright
+        <div class="footer-copyright text-center py-3">© 2025 Szerzői jog
         </div>
     </footer>
-    <!--================ End Footer Area =================-->
+    <!--================ Lábléc Vége =================-->
 </body>
 </html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Go-Bike Shop - About</title>
-    <link rel="icon" type="image/x-icon" href="/assets/images/gb-logo.png">
+    <meta content="width=device-width, initial-scale=1" name="viewport" /> 
+    <title>Go-Bicikli Shop - Rólunk</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/gb-logo.png">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
@@ -14,78 +14,73 @@
     <script src="/src/isUserLoggedIn.js"></script>
 </head>
 <body onload="changeLoginText()">
-    <!--================ Start Header Menu Area =================-->
+    <!--================ Kezdőlap Menü Terület =================-->
     <header>
         <nav class="navbar navbar-expand-md navbar-light fixed-top topnav">
-            <a class="navbar-brand" href="index.html">Go-Bike</a>
+            <a class="navbar-brand" href="home.html">Go-Bicikli</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link color-white" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link color-white" href="home.html">Kezdőlap <span class="sr-only">(aktuális)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="category.html">Categories</a>
+                        <a class="nav-link" href="category.html">Kategóriák</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="shop.html">Shop</a></li>
+                        <a class="nav-link" href="shop.html">Bolt</a></li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a></li>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item" id="loginB">
-                        <a class="nav-link" href="auth/login.html">Login</a></li>
+                        <a class="nav-link" href="contact.html">Kapcsolat</a></li>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-    <!--================ End Header Menu Area =================-->
+    <!--================ Vége a Kezdőlap Menü Területnek =================-->
     </br>
     <div class="container container-height">
         <div class="row justify-content-center">
             <div class="col-12 col-xs-10 col-sm-8 col-md-8 col-lg-8 col-xl-8 mb-4">
                     <div class="form-group">
-                        <label for="InputItemName">Name</label>
-                        <input type="itemname" class="form-control" id="inputItemName" value="Bike Name" placeholder="Bike Name">
+                        <label for="InputItemName">Név</label>
+                        <input type="itemname" class="form-control" id="inputItemName" placeholder="Kerékpár neve">
                     </div>
                     <div class="form-group">
-                        <label for="formControlTextarea1">Description</label>
-                        <textarea class="form-control" id="formControlTextarea1" rows="5" placeholder="Bike Description" value="Bike Description"></textarea>
+                        <label for="formControlTextarea1">Leírás</label>
+                        <textarea class="form-control" id="formControlTextarea1" rows="5" placeholder="Kerékpár leírása" value="Kerékpár leírása"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="inputRate">Rate</label>
-                        <input type="rate" class="form-control" id="inputRate" value="4.5" placeholder="Rating">
+                        <label for="inputRate">Értékelés</label>
+                        <input type="rate" class="form-control" id="inputRate" placeholder="Értékelés">
                     </div>
                     <div class="form-group">
-                        <label for="price">Price</label>
+                        <label for="price">Ár</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="itemPrice">$</span>
                             </div>
-                            <input type="text" class="form-control" id="newItemPrice" value="1000" placeholder="Price" pattern="^[0-9]*$" required>
+                            <input type="text" class="form-control" id="newItemPrice" placeholder="Ár" pattern="^[0-9]*$" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="image">Image</label>
+                        <label for="image">Kép</label>
                         <input type="file" id="img" name="img" accept="image/*">
                     </div>
                     </br>
-                    <button onclick="addItem()" class="btn btn-primary btn-block">Insert</button>
+                    <button onclick="addItem()" class="btn btn-primary btn-block">Beszúrás</button>
                     <div id="addedAlert" class="mt-2"></div>
             </div>
         </div>
     </div>
     </br>
-    <!--================ Start Footer Area =================-->
+    <!--================ Kezdőlap Lábjegyzet Terület =================-->
     <footer class="page-footer font-small">
-        <div class="footer-copyright text-center py-3">© 2025 Copyright
+        <div class="footer-copyright text-center py-3">© 2025 Szerzői jogok
         </div>
     </footer>
-    <!--================ End Footer Area =================-->
+    <!--================ Vége a Lábjegyzet Területnek =================-->
 </body>
 </html>

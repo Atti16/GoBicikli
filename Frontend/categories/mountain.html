@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport" /> 
-    <title>Go-Bike Shop - Home</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" /> <!-- CSS @media-hoz -->
+    <title>Go-Bicikli Shop - Főoldal</title>
     <link rel="icon" type="image/x-icon" href="../assets/images/gb-logo.png">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
@@ -15,73 +15,69 @@
     <script src="../src/isUserLoggedIn.js"></script>
 </head>
 <body onload="changeLoginText()">
-    <!--================ Start Header Menu Area =================-->
+    <!--================ Kezdőlap menü szakasz kezdete =================-->
     <header>
         <nav class="navbar navbar-expand-md navbar-light fixed-top topnav">
-            <a class="navbar-brand" href="../index.html">Go-Bike</a>
+            <a class="navbar-brand" href="../home.html">Go-Bicikli</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link color-white" href="../index.html">Home</a>
+                        <a class="nav-link color-white" href="../home.html">Főoldal</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="../category.html">Categories</a>
+                        <a class="nav-link" href="../category.html">Kategóriák</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../shop.html">Shop</a></li>
+                        <a class="nav-link" href="../shop.html">Bolt</a></li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../contact.html">Contact</a></li>
+                        <a class="nav-link" href="../contact.html">Kapcsolat</a></li>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="../auth/login.html"  id="loginB">Login</a></li>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../shopping-cart.html"><img style="height: 30px;" src="/assets/icons/shopping-cart-white.png"></a></li>
+                        <a class="nav-link" href="../shopping-cart.html"><img style="height: 30px;" src="../assets/icons/shopping-cart-white.png"></a></li>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-    <!--================ End Header Menu Area =================-->
-    <!--================ Start Categories Area =================-->
+    <!--================ Kezdőlap menü szakasz vége =================-->
+    <!--================ Kategóriák szakasz kezdete =================-->
     <div class="container-fluid container-height">
         <div class="row">
             <div class="col-12 col-sm-3 col-md-3 col-lg-3 pt-2 p-0">
                 <ul class="vertical-nav navbar-nav">
-                    <h2 class="vertical-nav-element" style="background-color: #D8D2CB;"><small>Categories:</small></h2>
+                    <h2 class="vertical-nav-element" style="background-color: #D8D2CB;"><small>Kategóriák:</small></h2>
                     <li><a href="mountain.html">Mountain</a></li>
                     <li><a href="gravel.html">Gravel</a></li>
-                    <li><a href="road.html">Road</a></li>
-                    <li><a href="city.html">City</a></li>
-                    <li><a href="electric.html">Electric</a></li>
+                    <li><a href="road.html">Út</a></li>
+                    <li><a href="city.html">Városi</a></li>
+                    <li><a href="electric.html">Elektromos</a></li>
                 </ul>
             </div>
             <div class="col-12 col-sm-9 col-md-9 col-lg-9 pt-2 pt-4">
                 <div>
-                    <h3>Mountain Bikes</h3>
+                    <h3>Mountain biciklik</h3>
                     <hr>
-                    <p>Mountain Bikes are perfect for riders who want a comfortable commute, ride with the family and get off the beaten track.
-                    </br>Also are perfect for rides that include a bit of everything. Long undulating terrain, technical terrain and exciting descents.</p>
+                    <p>A mountain biciklik tökéletesek azoknak a bringázóknak, akik kényelmes közlekedést szeretnének, családdal együtt tekernek, vagy el akarnak térni a kitaposott ösvényről. </br>Emellett azoknak is ideálisak, akik olyan túrákat keresnek, amelyek tartalmaznak mindent egy kicsit. Hosszú, hullámzó terep, technikai terep és izgalmas lejtők.</p>
                     <div class="container">
                         <div class="row">
                             <div class="col-12 col-lg-4 col-md-5 col-sm-12 col-xl-3 mb-2">
                                 <div class="galery-card">
-                                    <img src="../assets/images/Marin Bolinas Ridge 1 Blue.jpg" alt="Mountain" class="galery-card-photo">
+                                    <img src="images/Marin Bolinas Ridge 1 Blue.jpg" alt="Mountain" class="galery-card-photo">
                                     <h5>Marin Bolinas Ridge 1</h5>
-                                    <a class="btn btn-secondary btn-block" href="/items/single-item.html" onclick="setIdOfItemToShow(1)">Read more</a>
+                                    <a class="btn btn-secondary btn-block" href="../single-item.html" onclick="setIdOfItemToShow(1)">További információ</a>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4 col-md-5 col-sm-12 col-xl-3">
                                 <div class="galery-card">
-                                    <img src="../assets/images/Marin Bolinas Ridge 2 Black.jpg" alt="Mountain" class="galery-card-photo">
+                                    <img src="images/Marin Bolinas Ridge 2 Black.jpg" alt="Mountain" class="galery-card-photo">
                                     <h5>Marin Bolinas Ridge 2</h5>
-                                    <a class="btn btn-secondary btn-block" href="/items/single-item.html" onclick="setIdOfItemToShow(2)">Read more</a>
+                                    <a class="btn btn-secondary btn-block" href="../single-item.html" onclick="setIdOfItemToShow(2)">További információ</a>
                                 </div>
                             </div>
                         </div>
@@ -90,12 +86,12 @@
             </div>
         </div>
     </div>
-    <!--================ End Categories Area =================-->
-    <!--================ Start Footer Area =================-->
+    <!--================ Kategóriák szakasz vége =================-->
+    <!--================ Lábjegyzet szakasz kezdete =================-->
     <footer class="page-footer font-small">
         <div class="footer-copyright text-center py-3">© 2025 Copyright
         </div>
     </footer>
-    <!--================ End Footer Area =================-->
+    <!--================ Lábjegyzet szakasz vége =================-->
 </body>
 </html>
