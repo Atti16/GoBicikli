@@ -12,16 +12,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static('../Frontend'));
 app.set('json spaces', 2);
 app.use(cors());
-// TASK 4.
-//Product adding: after submitting a new product using the form, send the data to the server (use the POST method). Add the new product to the list of products.
 app.post('/addItem', addNewItem); 
-//Product loading: the basic product offer should be downloaded from the server (use the GET method). Show products in a "dynamic table" upon successful load.
 app.get('/getItems', getItems);
-//Login: Simulate user login. When you click on the login button, send the information to the server (via the POST method).
 app.post('/login', loginUser);
 
 function getItems(req,res) {
-    // Sync will wait until all data is loaded
     var data = fs.readFileSync('../Frontend/bikesInfo.json');
     res.send(data);
 }
