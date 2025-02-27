@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:300,400,500,600");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,500");
+body {
+    margin: 0;
+    background-color: #EEEEEE;
+    font-family:"Roboto",sans-serif;font-size:15px;font-weight:400;line-height:1.667 !important;
+    padding-top: 7vh;
+}
+h1, h2, h3, h4 {
+    font-family:"Oswald",sans-serif !important;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.container-height {
+    min-height: 85vh !important;
+}
+/* nav bar */
+.navbar-light .navbar-toggler {
+    filter: invert(1);
+    border-color: #EEEEEE;
+}
+nav .navbar-brand {
+    color: #EEEEEE !important;
+}
+nav .navbar-nav li a{
+    color: #EEEEEE !important;
+}
+nav .navbar-nav li a:hover{
+    color: #D8D2CB !important;
+}
+.topnav {
+    background-color: #1C658C;
+    
+}
+/* home photo */
+.home-photo {
+    background-image: url('/assets/images/home-wallpaper.jpg');
+    height: 100%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home-shop-now-btn {
+    height: 300px;
+    position: relative;
+}
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    color: #EEEEEE;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.shop-now {
+    font: bold 14px;
+    text-decoration: none;
+    background-color: #1C658C;
+    color: #EEEEEE;
+    padding: 14px 16px;
+}
+.shop-now:hover {
+    color: #1C658C;
+    background-color: #D8D2CB;
+}
+/* Categories Home */
+.categories {
+    min-height: 250px;
+}
+.column {
+    float: left;
+    width: 20%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 800px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+        height: 100%;
+    }
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #EEEEEE;
+    transition: transform .2s;
+}
+.card:hover {
+    transform: scale(1.1);
+}
+.card-photo {
+    max-width: 90%;
+    height: 150px;
+}  
+.central-message {  
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+    text-align: center;
+}
+#central-element {
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+    text-align: center;
+}
+/* contact section on contact page */
+#contact {
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+    text-align: left;
+}
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: #464d52;
+    color: #EEEEEE;
+}
+footer a {
+    color: #EEEEEE;
+}
+/* Table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+td, th {
+    border: 1px solid #D8D2CB;
+    text-align: left;
+    padding: 8px;
+}
+  
+tr:nth-child(even) {
+    background-color: #D8D2CB;
+}
+/* Form */
+/*form {
+    width: 50%;
+    margin: auto;
+}
+  
+.newsletter {
+    padding: 10px;
+    background-color: #EEEEEE;
+    box-sizing: border-box;
+}
+  
+input[type=submit], input[type=password], input[type=place] {
+    padding: 12px;
+    margin: 8px 0;
+    width: 25%;
+    display: inline-block;
+    border: 1px solid #D8D2CB;
+}
+.login td {
+    border-collapse:collapse;
+    border: none;
+    background-color: #EEEEEE;
+    padding: 0px;
+}
+.login input[type=submit],.login input[type=password],.login input[type=place] {
+    padding: 12px;
+    width: 90%;
+    display: inline-block;
+}   
+
+input[type=submit] {
+    text-decoration: none;
+    background-color: #1C658C;
+    color: #EEEEEE;
+}
+.login input[type=submit] {
+    text-decoration: none;
+    background-color: #1C658C;
+    color: #EEEEEE;
+    width: 100%;
+}
+input[type=submit]:hover {
+    color: #1C658C;
+    background-color: #D8D2CB;
+}*/
+.icon {
+    height: 15px;
+}
+/* Galery */
+.galery {
+    min-height: 100vh;
+    width: 90%;
+    margin: auto;
+    display: block;
+}
+.galery-column {
+    float: left;
+    width: 25%;
+    padding: 15px 15px;
+    box-sizing: border-box;
+}
+.galery-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #ffffff;
+    transition: transform .2s;
+}
+.galery-card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: #EEEEEE;
+    background-color: #1C658C;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+    text-decoration: none;
+}
+.galery-card button:hover {
+    opacity: 0.7;
+  }
+.galery-card a {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: #EEEEEE;
+    background-color: #1C658C;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+    text-decoration: none;
+}
+.galery-card a:hover {
+    opacity: 0.7;
+  }
+.galery-card:hover {
+    transform: scale(1.1);
+}
+.galery-card-photo {
+
+    width: 100%;
+} 
+.star {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 6px;
+    margin-left: 5px;
+}
+/* vertical nav */
+.vertical-nav {
+    margin: 0;
+    padding: 0;
+    background-color: #EEEEEE;
+}
+
+.vertical-nav a {
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+  
+.vertical-nav a.active {
+    color: #1C658C;
+    text-decoration-line: underline;
+}
+  
+.vertical-nav a:hover {
+    color: #1C658C;
+}
+.vertical-nav-element {
+    display: block;
+    color: #1C658C;
+    padding: 8px 16px;
+}
+.category-column {
+    width: 25%;
+    padding: 15px 15px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.signin {
+    background-color: white;
+    text-align: center;
+}
+#wrapper {
+    height: 70vh;
+    padding-top: 1vh;
+    width: 90%;
+    margin: auto;
+    background-color: white;
+}
+#item {
+    float: left;
+    width: 60%;
+    padding-right: 10px;
+}
+#item:hover {
+    opacity: 0.9;
+}
+#description {
+    margin: auto;
+    background-color: #EEEEEE;
+    border-radius: 5px;
+}
+#AddToChartBtn {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: #EEEEEE;
+    background-color: #1C658C;
+    text-align: center;
+    cursor: pointer;
+    margin: auto;
+}
+#AddToChartBtn:hover {
+    opacity: 0.7;
+}
+.cat-home {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+.cat-home:active,.cat-home:visited,.cat-home:focus{
+    text-decoration: none;
+    color: black;
+}
+a.btn-secondary {
+    background-color: #1C658C !important;
+    border-color: #1C658C !important;
+}
+.btn-block {
+    background-color: #1C658C !important;
+    border-color: #1C658C !important;
+}
