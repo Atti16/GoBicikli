@@ -1,7 +1,6 @@
-# GoBike-WebShop
+# GoBicikli-WebShop
 This is full-responsive web shop. Frontend - HTML,CSS, Vanilla JS and Bootstrap. Backend - Node.js
 
-## Tutorial for node js part 4
 Clone repo, navigate to Backend folder </br>
 `cd Backend` </br>
 Run node to install node-modules </br>
