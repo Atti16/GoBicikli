@@ -15,7 +15,6 @@ h1, h2, h3, h4 {
 .container-height {
     min-height: 85vh !important;
 }
-/* nav bar */
 .navbar-light .navbar-toggler {
     filter: invert(1);
     border-color: #EEEEEE;
@@ -142,8 +141,8 @@ td, th {
 tr:nth-child(even) {
     background-color: #D8D2CB;
 }
-/* Form */
-/*form {
+
+form {
     width: 50%;
     margin: auto;
 }
@@ -187,7 +186,7 @@ input[type=submit] {
 input[type=submit]:hover {
     color: #1C658C;
     background-color: #D8D2CB;
-}*/
+}
 .icon {
     height: 15px;
 }
