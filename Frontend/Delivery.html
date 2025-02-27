@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szállítás</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/gb-logo.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .delivery-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .delivery-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .delivery-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Szállítási Információk</h1>
+    </header>
+    <main>
+        <div class="delivery-container">
+            <form class="delivery-form" onsubmit="submitDeliveryForm(event)">
+                <h2>Szállítási Adatok</h2>
+                <div class="form-group">
+                    <label for="name">Név</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email cím</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefonszám</label>
+                    <input type="text" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Cím</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">Város</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="postalCode">Irányítószám</label>
+                    <input type="text" id="postalCode" name="postalCode" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Ország</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Rendelés Leadása</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script>
+        function submitDeliveryForm(event) {
+            event.preventDefault();
+            alert('Rendelés sikeresen leadva!');
+        }
+    </script>
+        <!--================ Start Footer Area =================-->
+        <footer class="page-footer font-small">
+            <div class="footer-copyright text-center py-3">© 2025 Copyright
+            </div>
+        </footer>
+        <!--================ End Footer Area =================-->
+</body>
+</html>
