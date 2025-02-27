@@ -1,0 +1,20 @@
+Categories:
+	Mountain
+	Gravel
+	Road
+	City
+	Electric
+
+Mountain:
+	Marin Bolinas Ridge 1
+	Marin Bolinas Ridge 2
+Gravel:
+	Marin Gestalt
+Road:
+	Polygon Strattos S5 - Shimano 105
+City:
+	Marin Kentfield CS2 ST
+	Polygon Sierra Deluxe Sport
+Electric:
+	Polygon Mt Bromo N7
+	Polygon Mt Bromo N8
