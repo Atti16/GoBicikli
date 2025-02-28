@@ -7,6 +7,13 @@ Run node to install node-modules </br>
 `npm install` </br>
 Run script </br>
 `npm start` </br>
+Navigate to Frontned folder </br>
+`cd Frontend` </br>
+Run node to install node-modules </br>
+`npm install` </br>
+Run script </br>
+`npm start` </br>
+
 Navigate in your browser to *http://localhost:3000/index.html* </br>
 
 ## Site is fully responsive
