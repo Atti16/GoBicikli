@@ -131,16 +131,15 @@
     function addToCart() {
         const item = {
             name: document.getElementById('dynamicItemName').innerText,
-            price: 700, // Példa ár, ezt dinamikusan is beállíthatod
+            price: 700, 
             size: document.getElementById('itemSize').value,
             color: document.getElementById('itemColor').value,
             quantity: document.getElementById('qty').value
         };
     
-        // Kosár tartalmának lekérése a localStorage-ból
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push(item); // Új termék hozzáadása a kosárhoz
-        localStorage.setItem('cart', JSON.stringify(cart)); // Kosár frissítése
+        cart.push(item); 
+        localStorage.setItem('cart', JSON.stringify(cart)); 
     
         alert('Termék hozzáadva a kosárhoz!');
     }
