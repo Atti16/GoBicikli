@@ -61,9 +61,9 @@
 
 <div class="container" id="login-container">
     <h2>Bejelentkezés</h2>
-    <form id="login-form">
-        <input type="text" placeholder="Felhasználónév" required>
-        <input type="password" placeholder="Jelszó" required>
+    <form id="login-form" onsubmit="return handleLogin(event)">
+        <input type="text" id="login-username" placeholder="Felhasználónév" required>
+        <input type="password" id="login-password" placeholder="Jelszó" required>
         <input type="submit" value="Bejelentkezés">
     </form>
     <div class="switch-form">
@@ -73,10 +73,10 @@
 
 <div class="container" id="register-container" style="display: none;">
     <h2>Regisztráció</h2>
-    <form id="register-form">
-        <input type="text" placeholder="Felhasználónév" required>
-        <input type="password" placeholder="Jelszó" required>
-        <input type="password" placeholder="Jelszó újra" required>
+    <form id="register-form" onsubmit="return handleRegister(event)">
+        <input type="text" id="register-username" placeholder="Felhasználónév" required>
+        <input type="password" id="register-password" placeholder="Jelszó" required>
+        <input type="password" id="register-password-confirm" placeholder="Jelszó újra" required>
         <input type="submit" value="Regisztráció">
     </form>
     <div class="switch-form">
@@ -93,6 +93,33 @@
     function switchToLogin() {
         document.getElementById('register-container').style.display = 'none';
         document.getElementById('login-container').style.display = 'block';
+    }
+    
+    function handleLogin(event) {
+        event.preventDefault();
+        const username = document.getElementById('login-username').value;
+        const password = document.getElementById('login-password').value;
+        
+        window.location.href = 'home.html';
+        
+        return false;
+    }
+    
+    function handleRegister(event) {
+        event.preventDefault();
+        const username = document.getElementById('register-username').value;
+        const password = document.getElementById('register-password').value;
+        const passwordConfirm = document.getElementById('register-password-confirm').value;
+        
+        if (password !== passwordConfirm) {
+            alert('A jelszavak nem egyeznek!');
+            return false;
+        }
+        
+        alert('Sikeres regisztráció! Most már bejelentkezhetsz.');
+        switchToLogin();
+        
+        return false;
     }
 </script>
     <!--================ Start Footer Area =================-->
