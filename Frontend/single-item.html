@@ -127,21 +127,21 @@
     <div id="cartContainer"></div>
     <button class="btn btn-danger mt-2" onclick="clearCart()">Kosár törlése</button>
 </div>
-    function addToCart() {
-        const item = {
-            name: document.getElementById('dynamicItemName').innerText,
-            price: 700, 
-            size: document.getElementById('itemSize').value,
-            color: document.getElementById('itemColor').value,
-            quantity: document.getElementById('qty').value
-        };
-    
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push(item); 
-        localStorage.setItem('cart', JSON.stringify(cart)); 
-    
-        alert('Termék hozzáadva a kosárhoz!');
-    }
+function addToCart() {
+    const item = {
+        name: document.getElementById('dynamicItemName').innerText,
+        price: document.getElementById('dynamicItemPrice').innerText, 
+        size: document.getElementById('itemSize').value,
+        color: document.getElementById('itemColor').value,
+        quantity: parseInt(document.getElementById('qty').value)
+    };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(item); 
+    localStorage.setItem('cart', JSON.stringify(cart)); 
+
+    alert('Termék hozzáadva a kosárhoz!');
+}
     </script>>
 
     <!--================ Hírlevél Feliratkozás Kezdete =================-->
