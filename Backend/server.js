@@ -47,7 +47,7 @@ function loginUser(req, res) {
             return res.status(500).send({ message: 'Database error' });
         }
         if (results.length > 0) {
-            // Felhasználó megtalálva
+            
             res.status(200).send({
                 message: true,
                 userId: results[0].id,
