@@ -41,7 +41,7 @@ function getItems(req, res) {
 function loginUser(req, res) {
     const { userEmail, userPassword } = req.body;
 
-    // SQL lekérdezés a felhasználó keresésére
+    
     connection.query('SELECT * FROM users WHERE email = ? AND pass = ?', [userEmail, userPassword], (error, results) => {
         if (error) {
             return res.status(500).send({ message: 'Database error' });
