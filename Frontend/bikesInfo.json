@@ -1,7 +1,7 @@
 { "1": {
   "id": "1",
   "name": "Marin Bolinas Ridge 1",
-  "description": "Suntour Xcm 100mm Suspension Fork. Shimano 3x7 Speed Durable Drivetrain. Power Cx7 Powerful Mechanical Disc Brakes. Modern Trail Geometry With Low Standover",
+  "description": "Suntour Xcm 100 mm-es felfüggesztéses villa. Shimano 3x7 sebességes, tartós hajtásrendszer. Power Cx7 erőteljes mechanikai tárcsafékek. Modern terep geometria alacsony átlépési magassággal.",
   "rate": "4.5",
   "price": "599",
   "imgSufix": [
@@ -12,7 +12,7 @@
 }, "2": {
   "id": "2",
   "name": "Marin Bolinas Ridge 2",
-  "description": "Suntour XCM 100mm Suspension Fork. Shimano 3x8 Speed Durable Drivetrain. Tektro M275 Hydraulic Disc Brakes. Modern Trail Geometry With Low Standover",
+  "description": "Suntour XCM 100 mm-es felfüggesztéses villa. Shimano 3x8 sebességes, tartós hajtásrendszer. Tektro M275 hidraulikus tárcsafékek. Modern terep geometria alacsony átlépési magassággal.",
   "rate": "5",
   "price": "699",
   "imgSufix": [
@@ -22,7 +22,7 @@
 }, "3": {
   "id": "3",
   "name": "Marin Gestalt",
-  "description": "Series 2 Frame, Aluminum Fork. Shimano Claris 2x8 Speed Drivetrain. Promax Render R Road Mechanical Disc Brakes. WTB Exposure Comp 700x32c Tires",
+  "description": "Series 2 váz, alumínium villa. Shimano Claris 2x8 sebességes hajtásrendszer. Promax Render R országúti mechanikai tárcsafékek. WTB Exposure Comp 700x32c gumik.",
   "rate": "5",
   "price": "1099",
   "imgSufix": [
@@ -33,7 +33,7 @@
 }, "4": {
   "id": "4",
   "name": "Polygon Strattos S5 - Shimano 105",
-  "description": "The new 2022 Polygon Strattos is designed to make every minute of your ride enjoyable as you push your limits. Be prepared to beat all your personal bests while conquering the tallest mountains in absolute comfort.",
+  "description": "Az új 2022-es Polygon Strattos úgy van tervezve, hogy minden egyes percét élvezetessé tegye, miközben átléped a határaidat. Készülj fel, hogy megdöntsd az összes személyes rekordodat, miközben a legmagasabb hegyeket hódítod meg teljes kényelemben..",
   "rate": "5",
   "price": "1299",
   "imgSufix": [
@@ -43,7 +43,7 @@
 }, "5": {
   "id": "5",
   "name": "Marin Kentfield CS2 ST",
-  "description": "MicroSHIFT Advent X 10-Speed Wide Range Drivetrain. Power CX7 Mechanical Disc Brakes. VeeTire GPVee, 700x40, Flat Protection Tires",
+  "description": "MicroSHIFT Advent X 10 sebességes, széles tartományú hajtásrendszer. Power CX7 mechanikai tárcsafékek. VeeTire GPVee, 700x40, defektvédelemmel ellátott gumik.",
   "rate": "5",
   "price": "769",
   "imgSufix": [
@@ -54,7 +54,7 @@
 }, "6": {
   "id": "6",
   "name": "Polygon Sierra Deluxe Sport",
-  "description": "Alutech 6061 alloy frame is lightweight, sturdy and comfortable. SR Suntour NEX commuter suspension fork delivers a responsive feel for the road. Shimano Altus / Tourney 21 Speed gro upset giving you all the gears you need to ride with ease. Tektro Alloy V brakes handle stopping duties",
+  "description": "Az Alutech 6061 alumínium váz könnyű, erős és kényelmes. Az SR Suntour NEX városi felfüggesztéses villa dinamikus érzést biztosít az úton. Shimano Altus / Tourney 21 sebességes hajtásrendszer biztosítja az összes sebességet, amire szükséged van a kényelmes tekeréshez. A Tektro alumínium V-fékek gondoskodnak a megállásról.",
   "rate": "5",
   "price": "599",
   "imgSufix": [
@@ -63,7 +63,7 @@
 }, "7": {
   "id": "7",
   "name": "Polygon Mt Bromo N7",
-  "description": "Mt Bromo N was engineered from a clean slate to deliver the mountain biking experience we dream of; trail bike agility with enduroesque composure, where climbs transform into fun and your descents triple.",
+  "description": "Az Mt Bromo N-t egy tiszta lappal tervezték, hogy megadja a hegyikerékpározás élményét, amiről álmodunk; olyan terepkerékpár ügyességgel és enduroszerű stabilitással, ahol a felmenetek szórakozássá válnak, és a lejtők háromszor annyira izgalmasak.",
   "rate": "5",
   "price": "4399",
   "imgSufix": [
@@ -73,7 +73,7 @@
 }, "8": {
   "id": "8",
   "name": "Polygon Mt Bromo N8",
-  "description": "Mt Bromo N was engineered from a clean slate to deliver the mountain biking experience we dream of; trail bike agility with enduroesque composure, where climbs transform into fun and your descents triple.",
+  "description": "Az Mt Bromo N-t egy tiszta lappal tervezték, hogy megadja azt a hegyikerékpáros élményt, amiről álmodunk; terepkerékpáros ügyességgel és enduroszerű stabilitással, ahol a felmenetek szórakozássá válnak, és a lejtők háromszor annyira izgalmasak..",
   "rate": "5",
   "price": "5999",
   "imgSufix": [
