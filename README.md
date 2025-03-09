@@ -16,10 +16,6 @@ Run server</br>
 
 Navigate in your browser to *http://localhost:3000/index.html* </br>
 
-## Site is fully responsive
-![bike2](https://user-images.githubusercontent.com/39196212/167292053-fecdc571-4aa5-41f0-bdce-606b121557f9.png)
-![bikes1](https://user-images.githubusercontent.com/39196212/167292061-fa9c62d9-600d-457d-a547-e5eb7755bd34.png)
-
 ## To login
 use test@test for email </br>
 use test for password 
