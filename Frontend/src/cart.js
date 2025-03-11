@@ -24,7 +24,7 @@ function hozzaad(termek, ar) {
     kosar.push(termekAdat);
     console.log(kosar);
 
-    localStorage.setItem("kosar", JSON.stringify(kosar));
+    localStorage.setItem("kosar", JSON.stringify(kosar));  
     alert("A termék hozzáadva a kosárhoz!");
 }
 
@@ -34,7 +34,7 @@ function generalId() {
 
 function generalTable() {
     try {
-        kosar = JSON.parse(localStorage.getItem("kosar")) || [];
+        kosar = JSON.parse(localStorage.getItem("kosar")) || []; 
     } catch (error) {
         kosar = [];
         console.error("Hiba történt a kosár betöltésekor a localStorage-ból:", error);
@@ -77,14 +77,14 @@ function generalTable() {
 }
 
 function kosarTisztit() {
-    localStorage.clear();
+    localStorage.removeItem('kosar');  
     kosar = [];
     oldalFrissites(null);
 }
 
 function torolTermek(index) {
     try {
-        kosar = JSON.parse(localStorage.getItem("kosar")) || [];
+        kosar = JSON.parse(localStorage.getItem("kosar")) || [];  
     } catch (error) {
         kosar = [];
         console.error("Hiba történt a kosár betöltésekor a localStorage-ból:", error);
@@ -94,7 +94,7 @@ function torolTermek(index) {
     
     kosar = kosar.filter((_, i) => i !== index);
     
-    localStorage.setItem("kosar", JSON.stringify(kosar));
+    localStorage.setItem("kosar", JSON.stringify(kosar));  
     generalTable();
 }
 
@@ -112,9 +112,73 @@ function oldalFrissites(tabla) {
         if (dvTabla && tabla) dvTabla.appendChild(tabla);
     }
     
-    kedvezmenySzamitas();
+    try {
+        kedvezmenySzamitas();
+    } catch (error) {
+        console.log("Kedvezmény számítás nem elérhető");
+    }
 }
 
 function setIdOfItemToShow(id) {
     localStorage.setItem("itemToShow", JSON.stringify(id));
+}
+
+function kosarbaHelyezes() {
+    const termekNev = document.getElementById('dynamicItemName').innerText;
+    const termekAr = document.getElementById('dynamicItemPrice').innerText;
+    hozzaad(termekNev, termekAr);
+}
+
+function kosarGombHozzaadas() {
+    const dinamikusGombContainer = document.getElementById('dynamicItemAction');
+    if (dinamikusGombContainer) {
+        dinamikusGombContainer.innerHTML = '';
+        
+        const kosarbaGomb = document.createElement('button');
+        kosarbaGomb.className = 'btn btn-primary btn-block';
+        kosarbaGomb.textContent = 'Kosárba tesz';
+        kosarbaGomb.onclick = kosarbaHelyezes;
+        
+        dinamikusGombContainer.appendChild(kosarbaGomb);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const eredetiLoadItemToShow = window.loadItemToShow;
+    if (eredetiLoadItemToShow) {
+        window.loadItemToShow = function() {
+            eredetiLoadItemToShow();
+            setTimeout(kosarGombHozzaadas, 500);
+        };
+    }
+    
+    setTimeout(function() {
+        if (document.getElementById('dynamicItemName') && 
+            document.getElementById('dynamicItemName').innerText && 
+            document.getElementById('dynamicItemAction')) {
+            kosarGombHozzaadas();
+        }
+    }, 1000);
+});
+
+function generateTable() {
+    const kosar = JSON.parse(localStorage.getItem('kosar')) || [];  
+    const cartItems = document.getElementById('cartItems');
+
+    if (kosar.length === 0) {
+        cartItems.innerHTML = "<p>A kosár üres.</p>";
+    } else {
+        let html = "<table class='table'><thead><tr><th>Termék neve</th><th>Méret</th><th>Szín</th><th>Mennyiség</th><th>Ár</th></tr></thead><tbody>";
+        kosar.forEach(item => {
+            html += `<tr><td>${item.termek}</td><td>${item.meret}</td><td>${item.szin}</td><td>${item.mennyiseg}</td><td>${item.ar}</td></tr>`;
+        });
+        html += "</tbody></table>";
+        cartItems.innerHTML = html;
+    }
+}
+
+function clearBasket() {
+    localStorage.removeItem('kosar'); 
+    generateTable(); 
+    alert('A kosár kiürítve!');
 }

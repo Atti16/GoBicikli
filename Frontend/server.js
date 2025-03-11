@@ -69,6 +69,6 @@ function ujElemHozzaad(req, res) {
     res.send(reply);
 }
 
-console.log('A szerver a 3000-es porton figyel');
+console.log('A szerver a 3000-es porton fut');
 module.exports = app;
 app.listen(3000)

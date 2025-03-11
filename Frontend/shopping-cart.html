@@ -14,29 +14,7 @@
     <script src="src/countdown.js"></script>
     <script src="src/index.js"></script>
     <script src="src/isUserLoggedIn.js"></script>
-    <script>
-    function generateTable() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const cartItems = document.getElementById('cartItems');
-
-        if (cart.length === 0) {
-            cartItems.innerHTML = "<p>A kosár üres.</p>";
-        } else {
-            let html = "<table class='table'><thead><tr><th>Termék neve</th><th>Méret</th><th>Szín</th><th>Mennyiség</th><th>Ár</th></tr></thead><tbody>";
-            cart.forEach(item => {
-                html += `<tr><td>${item.name}</td><td>${item.size}</td><td>${item.color}</td><td>${item.quantity}</td><td>${item.price}</td></tr>`;
-            });
-            html += "</tbody></table>";
-            cartItems.innerHTML = html;
-        }
-    }
-
-    function clearBasket() {
-        localStorage.removeItem('cart');
-        generateTable(); 
-        alert('A kosár kiürítve!');
-    }
-    </script>
+    <script src="src/cart.js"></script>
 </head>
 <body onload="generateTable();changeLoginText()">
     <!--================ Kezdőlap Menü Kezdete =================-->

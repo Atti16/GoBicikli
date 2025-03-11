@@ -113,21 +113,22 @@ function getBikesInTable(bikes) {
     headerCell.innerHTML = "Rate";
     row.appendChild(headerCell);
 
-    for (var i = 1; i <= Object.keys(bikes).length; i++) {
+    bikes.forEach(bike => {
         row = table.insertRow(-1);
-        var cell = row.insertCell(-1);
-        cell.innerHTML = bikes[i].name;
+
+        let cell = row.insertCell(-1);
+        cell.innerHTML = bike.name;
 
         cell = row.insertCell(-1);
-        cell.innerHTML = bikes[i].description;
+        cell.innerHTML = bike.description;
 
         cell = row.insertCell(-1);
-        cell.innerHTML = bikes[i].price;
+        cell.innerHTML = bike.price;
 
         cell = row.insertCell(-1);
-        cell.innerHTML = bikes[i].rate;
+        cell.innerHTML = bike.rate;
+    });
 
-    }
     divTable.appendChild(table);
     divT.appendChild(divTable);
     return divT;
