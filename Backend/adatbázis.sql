@@ -13,20 +13,20 @@ CREATE TABLE felhasznalok (
     admin BOOLEAN DEFAULT FALSE
 );
 
--- Kategóriák tábla
+-- Kategóriák tábla 
 CREATE TABLE kategoriak (
     kategoria_id SERIAL PRIMARY KEY,
     nev VARCHAR(50) NOT NULL,
     leiras TEXT
 );
 
--- Márkák tábla
+-- Márkák tábla 
 CREATE TABLE markak (
     marka_id SERIAL PRIMARY KEY,
     nev VARCHAR(50) NOT NULL
 );
 
--- Termékek tábla
+-- Termékek tábla (biciklik)
 CREATE TABLE termekek (
     termek_id SERIAL PRIMARY KEY,
     sku VARCHAR(20) NOT NULL UNIQUE,
@@ -42,7 +42,7 @@ CREATE TABLE termekek (
     aktiv BOOLEAN DEFAULT TRUE
 );
 
--- Méret opciók kerékpárokhoz
+-- Méret opciók biciklikhez (pl. S, M, L, XL)
 CREATE TABLE meretek (
     meret_id SERIAL PRIMARY KEY,
     termek_id INTEGER REFERENCES termekek(termek_id) ON DELETE CASCADE,
@@ -55,7 +55,6 @@ CREATE TABLE meretek (
 CREATE TABLE kosarak (
     kosar_id SERIAL PRIMARY KEY,
     felhasznalo_id INTEGER REFERENCES felhasznalok(felhasznalo_id),
-    session_id VARCHAR(100), -- Nem bejelentkezett felhasználókhoz
     letrehozas_datum TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -77,8 +76,7 @@ CREATE TABLE rendelesek (
     statusz VARCHAR(20) NOT NULL DEFAULT 'pending', 
     szallitas_cim TEXT NOT NULL,
     teljes_osszeg NUMERIC(10,2) NOT NULL,
-    szallitas_modja VARCHAR(50) NOT NULL,
-    fizetes_modja VARCHAR(50) NOT NULL,
+    szallitas_modja VARCHAR(50) NOT NULL, 
     megjegyzesek TEXT
 );
 
