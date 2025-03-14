@@ -4,13 +4,6 @@ CREATE TABLE felhasznalok (
     email VARCHAR(100) NOT NULL UNIQUE,
     jelszo_hash VARCHAR(255) NOT NULL,
     teljes_nev VARCHAR(100) NOT NULL,
-    telefon VARCHAR(20),
-    cim TEXT NOT NULL,
-    varos VARCHAR(50) NOT NULL,
-    iranyitoszam VARCHAR(10) NOT NULL,
-    orszag VARCHAR(50) NOT NULL,
-    regisztracio_datum TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    admin BOOLEAN DEFAULT FALSE
 );
 
 -- Kategóriák tábla 
@@ -35,8 +28,6 @@ CREATE TABLE termekek (
     marka_id INTEGER REFERENCES markak(marka_id),
     kategoria_id INTEGER REFERENCES kategoriak(kategoria_id),
     ar NUMERIC(10,2) NOT NULL,
-    akcios_ar NUMERIC(10,2),
-    keszlet_mennyiseg INTEGER NOT NULL DEFAULT 0,
     kep_url VARCHAR(255),
     specifikaciok TEXT,
     aktiv BOOLEAN DEFAULT TRUE
@@ -47,7 +38,6 @@ CREATE TABLE meretek (
     meret_id SERIAL PRIMARY KEY,
     termek_id INTEGER REFERENCES termekek(termek_id) ON DELETE CASCADE,
     meret_nev VARCHAR(20) NOT NULL,
-    keszlet_mennyiseg INTEGER NOT NULL DEFAULT 0,
     UNIQUE(termek_id, meret_nev)
 );
 
@@ -77,7 +67,6 @@ CREATE TABLE rendelesek (
     szallitas_cim TEXT NOT NULL,
     teljes_osszeg NUMERIC(10,2) NOT NULL,
     szallitas_modja VARCHAR(50) NOT NULL, 
-    megjegyzesek TEXT
 );
 
 -- Rendelés tételek tábla
