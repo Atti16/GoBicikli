@@ -7,53 +7,79 @@
     <link rel="icon" type="image/x-icon" href="assets/images/gb-logo.png">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #312e2e, #1C658C);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            overflow: hidden;
         }
         .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 350px;
             text-align: center;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .container:hover {
+            transform: translateY(-5px);
         }
         .container h2 {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            color: #333;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
         .container input[type="text"],
         .container input[type="password"] {
-            width: 70%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            width: 85%;
+            padding: 12px;
+            margin: 12px 0;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            border-radius: 0;
+            background: transparent;
+            transition: border-color 0.3s ease;
+        }
+        .container input[type="text"]:focus,
+        .container input[type="password"]:focus {
+            outline: none;
+            border-color: #28a745;
         }
         .container input[type="submit"] {
-            width: 70%;
-            padding: 10px;
-            background-color: #28a745;
+            width: 85%;
+            padding: 12px;
+            background: linear-gradient(90deg, #28a745, #34d058);
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 25px;
             cursor: pointer;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .container input[type="submit"]:hover {
-            background-color: #218838;
+            background: linear-gradient(90deg, #218838, #28a745);
+            transform: scale(1.05);
         }
         .switch-form {
-            margin-top: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
         }
         .switch-form a {
-            color: #007bff;
+            color: #1C658C;
+            font-weight: 500;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         .switch-form a:hover {
+            color: #4b74a2;
             text-decoration: underline;
         }
     </style>
@@ -87,13 +113,21 @@
 
 <script>
     function switchToRegister() {
-        document.getElementById('login-container').style.display = 'none';
-        document.getElementById('register-container').style.display = 'block';
+        const loginContainer = document.getElementById('login-container');
+        const registerContainer = document.getElementById('register-container');
+        loginContainer.style.display = 'none';
+        registerContainer.style.display = 'block';
+        registerContainer.classList.add('fade-in');
+        setTimeout(() => registerContainer.classList.remove('fade-in'), 500);
     }
 
     function switchToLogin() {
-        document.getElementById('register-container').style.display = 'none';
-        document.getElementById('login-container').style.display = 'block';
+        const loginContainer = document.getElementById('login-container');
+        const registerContainer = document.getElementById('register-container');
+        registerContainer.style.display = 'none';
+        loginContainer.style.display = 'block';
+        loginContainer.classList.add('fade-in');
+        setTimeout(() => loginContainer.classList.remove('fade-in'), 500);
     }
     
     function handleLogin(event) {
