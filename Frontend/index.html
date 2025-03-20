@@ -89,7 +89,7 @@
 <div class="container" id="login-container">
     <h2>Bejelentkezés</h2>
     <form id="login-form" onsubmit="return handleLogin(event)">
-        <input type="text" id="login-username" placeholder="Felhasználónév" required>
+        <input type="text" id="login-username" placeholder="E-mail" required>
         <input type="password" id="login-password" placeholder="Jelszó" required>
         <input type="submit" value="Bejelentkezés">
     </form>
@@ -101,7 +101,7 @@
 <div class="container" id="register-container" style="display: none;">
     <h2>Regisztráció</h2>
     <form id="register-form" onsubmit="return handleRegister(event)">
-        <input type="text" id="register-username" placeholder="Felhasználónév" required>
+        <input type="text" id="register-username" placeholder="E-mail" required>
         <input type="password" id="register-password" placeholder="Jelszó" required>
         <input type="password" id="register-password-confirm" placeholder="Jelszó újra" required>
         <input type="submit" value="Regisztráció">
@@ -117,8 +117,6 @@
         const registerContainer = document.getElementById('register-container');
         loginContainer.style.display = 'none';
         registerContainer.style.display = 'block';
-        registerContainer.classList.add('fade-in');
-        setTimeout(() => registerContainer.classList.remove('fade-in'), 500);
     }
 
     function switchToLogin() {
@@ -126,34 +124,66 @@
         const registerContainer = document.getElementById('register-container');
         registerContainer.style.display = 'none';
         loginContainer.style.display = 'block';
-        loginContainer.classList.add('fade-in');
-        setTimeout(() => loginContainer.classList.remove('fade-in'), 500);
     }
-    
-    function handleLogin(event) {
-        event.preventDefault();
-        const username = document.getElementById('login-username').value;
-        const password = document.getElementById('login-password').value;
-        
-        window.location.href = 'home.html';
-        
-        return false;
+
+    function validateEmail(email) {
+        return email.includes('@') && email.includes('.');
     }
-    
+
     function handleRegister(event) {
         event.preventDefault();
         const username = document.getElementById('register-username').value;
         const password = document.getElementById('register-password').value;
         const passwordConfirm = document.getElementById('register-password-confirm').value;
-        
+
+        // Ellenőrzi, hogy az email tartalmaz-e @ jelet és pontot
+        if (!validateEmail(username)) {
+            alert('Kérlek, adj meg egy érvényes e-mail címet, ami tartalmaz "@" jelet!');
+            return false;
+        }
+
+        // Ellenőrzi, hogy a jelszavak egyeznek-e
         if (password !== passwordConfirm) {
             alert('A jelszavak nem egyeznek!');
             return false;
         }
-        
+
+        // Tárolja a regisztrációs adatokat a localStorage-ban
+        localStorage.setItem('user_' + username, JSON.stringify({ email: username, password: password }));
         alert('Sikeres regisztráció! Most már bejelentkezhetsz.');
         switchToLogin();
-        
+
+        return false;
+    }
+
+    function handleLogin(event) {
+        event.preventDefault();
+        const username = document.getElementById('login-username').value;
+        const password = document.getElementById('login-password').value;
+
+        // Ellenőrzi, hogy az email tartalmaz-e @ jelet és pontot
+        if (!validateEmail(username)) {
+            alert('Kérlek, adj meg egy érvényes e-mail címet, ami tartalmaz "@" jelet!');
+            return false;
+        }
+
+        // Ellenőrzi, hogy a felhasználó regisztrálva van-e
+        const storedUser = localStorage.getItem('user_' + username);
+        if (!storedUser) {
+            alert('Ez az e-mail cím nincs regisztrálva! Kérlek, regisztrálj először.');
+            return false;
+        }
+
+        const userData = JSON.parse(storedUser);
+        if (userData.password !== password) {
+            alert('Hibás jelszó!');
+            return false;
+        }
+
+        // Sikeres bejelentkezés esetén átirányít
+        alert('Sikeres bejelentkezés!');
+        window.location.href = 'home.html';
+
         return false;
     }
 </script>
