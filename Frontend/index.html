@@ -112,7 +112,7 @@
 </div>
 
 <script>
-    
+    // Egyszerű "adatbázis" a regisztrált felhasználók tárolására
     let users = {};
 
     function switchToRegister() {
@@ -160,7 +160,7 @@
         const password = document.getElementById('register-password').value;
         const passwordConfirm = document.getElementById('register-password-confirm').value;
 
-        
+        // Ellenőrzés: Tartalmaz-e @ jelet a felhasználónév
         if (!username.includes('@')) {
             alert('A felhasználónévnek tartalmaznia kell "@" jelet!');
             return false;
