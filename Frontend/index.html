@@ -112,6 +112,9 @@
 </div>
 
 <script>
+    
+    let users = {};
+
     function switchToRegister() {
         const loginContainer = document.getElementById('login-container');
         const registerContainer = document.getElementById('register-container');
@@ -129,31 +132,56 @@
         loginContainer.classList.add('fade-in');
         setTimeout(() => loginContainer.classList.remove('fade-in'), 500);
     }
-    
+
     function handleLogin(event) {
         event.preventDefault();
         const username = document.getElementById('login-username').value;
         const password = document.getElementById('login-password').value;
-        
+
+        // Ellenőrzés: Létezik-e a felhasználó és egyezik-e a jelszó
+        if (!users[username]) {
+            alert('Ez a felhasználónév nincs regisztrálva!');
+            return false;
+        }
+        if (users[username] !== password) {
+            alert('Hibás jelszó!');
+            return false;
+        }
+
+        // Sikeres bejelentkezés
+        alert('Sikeres bejelentkezés!');
         window.location.href = 'home.html';
-        
         return false;
     }
-    
+
     function handleRegister(event) {
         event.preventDefault();
         const username = document.getElementById('register-username').value;
         const password = document.getElementById('register-password').value;
         const passwordConfirm = document.getElementById('register-password-confirm').value;
+
         
+        if (!username.includes('@')) {
+            alert('A felhasználónévnek tartalmaznia kell "@" jelet!');
+            return false;
+        }
+
+        // Ellenőrzés: Egyeznek-e a jelszavak
         if (password !== passwordConfirm) {
             alert('A jelszavak nem egyeznek!');
             return false;
         }
-        
+
+        // Ellenőrzés: Már regisztrált-e a felhasználónév
+        if (users[username]) {
+            alert('Ez a felhasználónév már foglalt!');
+            return false;
+        }
+
+        // Regisztráció mentése
+        users[username] = password;
         alert('Sikeres regisztráció! Most már bejelentkezhetsz.');
         switchToLogin();
-        
         return false;
     }
 </script>
