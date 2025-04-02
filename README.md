@@ -16,6 +16,3 @@ Run server</br>
 
 Navigate in your browser to *http://localhost:3000/index.html* </br>
 
-## To login
-use test@test for email </br>
-use test for password 
